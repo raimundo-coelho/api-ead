@@ -1,0 +1,46 @@
+ion-header {
+  background-color: #f7f8f9;
+  border-bottom: solid 2px #f29121;
+}
+
+#menuDesktop {
+  display: none;
+}
+
+/*.split-pane {
+  left: 0;
+  right: 0;
+  top: 56px;
+}*/
+#menu_mobile {
+  margin-top: 56px;
+}
+
+.logo {
+  width: 150px;
+  border: solid 1px #cccccc;
+}
+
+@media only screen and (min-width: 600px) {
+
+
+
+  #menu_mobile {
+    display: none;
+  }
+
+  #menuDesktop {
+    display: block;
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        display: inline;
+      }
+    }
+  }
+
+}

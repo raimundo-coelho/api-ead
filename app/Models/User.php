@@ -58,9 +58,8 @@ class User extends Authenticatable implements JWTSubject
     public static function createFully($data)
     {
         $name       = $data['name'];
-        $phone       = $data['phone'];
-        $password   = rand(2345, 9876);
-
+        $phone      = $data['phone'];
+        $password   = $data['password'];
 
         $data['password'] = bcrypt($password);
         /** @var User $user */
@@ -69,7 +68,7 @@ class User extends Authenticatable implements JWTSubject
         self::assingRole($user, $data['type']);
         $user->save();
 
-        return compact( 'name', 'password', 'phone');
+        return compact( 'name', 'phone');
     }
 
     public static function assignEnrolment(User $user, $type)
