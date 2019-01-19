@@ -74,30 +74,21 @@ class AuthController extends Controller
     }
 
 
-    /**
-     * @param UserRequest $request
-     * @return array|false|resource
-     */
     public function sendSMS(Request $request)
     {
-
         $phone = $request->phone;
         $query = User::all()->where('phone', '=', "$phone")->count();
         return $query;
-
     }
 
 
     public function newUser(UserRequest $request)
     {
-
         $data = $request->all();
-        $password = $request->password;
-
         $data['type'] = User::ROLE_STUDENT;
-        $data['password'] = bcrypt($password);
         $user = User::createFully($data);
-        // return $user;
+
+        return $user;
 
     }
 

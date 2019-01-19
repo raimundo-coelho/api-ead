@@ -22,7 +22,8 @@ class Kernel extends HttpKernel
         \IDEALE\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \IDEALE\Http\Middleware\TrustProxies::class,
-        TenantMiddleware::class
+        TenantMiddleware::class,
+        HandleCors::class,
     ];
 
     /**

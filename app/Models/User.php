@@ -57,18 +57,19 @@ class User extends Authenticatable implements JWTSubject
 
     public static function createFully($data)
     {
-        $password = str_random(6);
+        $name       = $data['name'];
+        $phone       = $data['phone'];
+        $password   = rand(2345, 9876);
+
+
         $data['password'] = bcrypt($password);
         /** @var User $user */
         $user = parent::create($data + ['enrolment' => str_random(6)]);
         self::assignEnrolment($user, self::ROLE_ADMIN);
         self::assingRole($user, $data['type']);
         $user->save();
-/*        if (isset($data['send_mail'])) {
-            $token = \Password::broker()->createToken($user);
-            $user->notify(new UserCreated($token));
-        }*/
-        return compact('user', 'password');
+
+        return compact( 'name', 'password', 'phone');
     }
 
     public static function assignEnrolment(User $user, $type)
