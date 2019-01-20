@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('enrolment')->nullable();
             $table->nullableMorphs('userable');
+            $table->string('role', 20)->nullable();
             $table->string('cpf', 14)->nullable();
             $table->string('birth_date', 20)->nullable();
             $table->string('other_document')->default(000);

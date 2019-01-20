@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
         factory(User::class)->create([
             'email' => 'admin@user.com',
             'enrolment' => 100000,
+            'role'    => User::ROLE_ADMIN,
             'phone' => '329000011',
             'cpf' => '00000000011',
             'other_document' => 'MG670943-SSP-MG'
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder
         factory(User::class)->create([
             'email' => 'teacher@user.com',
             'enrolment' => 400000,
+            'role'    => User::ROLE_TEACHER,
             'phone' => '329000022',
             'cpf' => '00000000022',
             'other_document' => 'MG670953-SSP-MG'
@@ -39,6 +41,7 @@ class UsersTableSeeder extends Seeder
         factory(User::class)->create([
             'email' => 'student@user.com',
             'enrolment' => 700000,
+            'role'    => User::ROLE_STUDENT,
             'phone' => '329000033',
             'cpf' => '00000000033',
             'other_document' => 'MG670963-SSP-MG'

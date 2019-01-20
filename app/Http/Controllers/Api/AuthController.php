@@ -70,7 +70,7 @@ class AuthController extends Controller
     public function refresh()
     {
         $token = \Auth::guard('api')->refresh();
-        return ['access_token' => $token]; //No-content
+        return ['access_token' => $token, 'name' => auth()->user()->name]; //No-content
     }
 
 

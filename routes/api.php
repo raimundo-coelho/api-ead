@@ -39,6 +39,8 @@ Route::group(['namespace' => 'Api'], function () {
         Route::apiResource('categories', 'CategoryController');
         Route::apiResource('lessons', 'LessonController');
         Route::apiResource('managers', 'ManagerController');
+        Route::apiResource('threads', 'ThreadsController');
+        Route::apiResource('replies', 'ReplyController');
 
 
 
