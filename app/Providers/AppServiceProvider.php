@@ -4,6 +4,7 @@ namespace IDEALE\Providers;
 
 use Code\Validator\Cpf;
 use IDEALE\Tenant\TenantManager;
+use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
         \Validator::extend('cpf', function ($attribute, $value, $parameters, $validator) {
             return (new Cpf())->isValid($value);
         });
+
+        // Resource::withoutWrapping();
     }
 
     /**

@@ -12,7 +12,7 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Course::class, 17)->create([
+        factory(Course::class, 1)->create([
             'user_id' => 1,
             'category_id' => 1,
             'name'  => 'Curso de Auto Maquiagem',

@@ -23,7 +23,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \IDEALE\Http\Middleware\TrustProxies::class,
         TenantMiddleware::class,
-        HandleCors::class,
     ];
 
     /**
@@ -44,7 +43,8 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:60,1',
-            'bindings'
+            'bindings',
+            HandleCors::class,
         ],
     ];
 
